@@ -15,11 +15,11 @@ public class Matrix implements MatrixOperations {
     }
 
     public double get(int i, int j) {
-        return 0;
+        return data[i][j];
     }
 
     public void set(int i, int j, double val) {
-
+        data[i][j] = val;
     }
 
     public Matrix add(Matrix m) {
