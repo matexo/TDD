@@ -55,7 +55,7 @@ public class MatrixTest {
 
     @Test
     public void testInversion() throws Exception {
-
+        
     }
 
     @Test

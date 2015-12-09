@@ -22,6 +22,14 @@ public class Matrix implements MatrixOperations {
         data[i][j] = val;
     }
 
+    public int getRows() {
+        return rows;
+    }
+
+    public int getCols() {
+        return cols;
+    }
+
     public Matrix add(Matrix m) {
         return null;
     }
