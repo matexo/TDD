@@ -5,6 +5,14 @@ package com.matrix;
  */
 public class Matrix implements MatrixOperations {
 
+    public double get(int i, int j) {
+        return 0;
+    }
+
+    public void set(int i, int j, double val) {
+
+    }
+
     public Matrix add(Matrix m) {
         return null;
     }

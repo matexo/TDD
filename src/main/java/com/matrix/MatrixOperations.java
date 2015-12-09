@@ -5,10 +5,12 @@ package com.matrix;
  */
 public interface MatrixOperations {
 
-    public Matrix add(Matrix m);
-    public Matrix subtract(Matrix m);
-    public Matrix multiply(Matrix m);
-    public Matrix inversion();
-    public Matrix transposition();
+    double get(int i, int j);
+    void set(int i, int j, double val);
+    Matrix add(Matrix m);
+    Matrix subtract(Matrix m);
+    Matrix multiply(Matrix m);
+    Matrix inversion();
+    Matrix transposition();
 
 }
