@@ -13,9 +13,13 @@ public class MatrixTest {
     private Matrix jednostkowa;
     private Matrix zerowa;
     private Matrix zwyklaKwadratowa;
+    private double delta;
 
     @Before
     public void setUp() throws Exception {
+        /* delta do porównywania
+        * przykładowa, jeśli ktoś chce to niech ją zmieni */
+        delta = Double.MIN_VALUE * Math.pow(10,3);
         jednostkowa = new Matrix(3,3);
         zerowa = new Matrix(3,3);
         zwyklaKwadratowa = new Matrix(3,3);

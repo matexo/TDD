@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="add1ee1e-e6bf-4054-97b9-fbc1bd1f2519" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/matrix/Matrix.java" afterPath="$PROJECT_DIR$/src/main/java/com/matrix/Matrix.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/matrix/MatrixTest.java" afterPath="$PROJECT_DIR$/src/main/java/com/matrix/MatrixTest.java" />
     </list>
     <ignored path="MatrixTDD.iws" />
@@ -80,8 +79,8 @@
       <file leaf-file-name="MatrixTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/matrix/MatrixTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.62092626">
-              <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+            <state vertical-scroll-proportion="1.6912521">
+              <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -674,7 +673,7 @@
       <option name="number" value="Default" />
       <updated>1449681342010</updated>
       <workItem from="1449681344885" duration="157000" />
-      <workItem from="1449690283924" duration="3190000" />
+      <workItem from="1449690283924" duration="3804000" />
     </task>
     <task id="LOCAL-00001" summary="Dodanie klasy testów">
       <created>1449690929298</created>
@@ -706,11 +705,17 @@
       <option name="project" value="LOCAL" />
       <updated>1449693229208</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Dodanie macierzy jednostkowej, zerowej i kwadratowej do testów">
+      <created>1449693484565</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1449693484565</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3347000" />
+    <option name="totallyTimeSpent" value="3961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -869,8 +874,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/matrix/MatrixTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62092626">
-          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+        <state vertical-scroll-proportion="1.6912521">
+          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
           <folding />
         </state>
       </provider>
