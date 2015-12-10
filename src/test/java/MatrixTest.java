@@ -92,14 +92,37 @@ public class MatrixTest {
     }
 
 
+
     @Test
     public void testMultiply() throws Exception {
+        Matrix result = new Matrix(3,3);
+        result.set(0,0,36);
+        result.set(0,1,39);
+        result.set(0,2,75);
+        result.set(1,0,13);
+        result.set(1,1,25);
+        result.set(1,2,47);
+        result.set(2,0,-6);
+        result.set(2,1,11);
+        result.set(2,2,20);
 
+
+
+        Matrix r = new Matrix(3,3);
+        assertEquals(zwyklaKwadratowa.getCols(), zwyklaKwadratowa.getRows());
+        r = zwyklaKwadratowa.multiply(zwyklaKwadratowa);
+        assertTrue(result.equals(r));
     }
 
+
     @Test
-    public void testInversion() throws Exception {
-        
+    public void testUnitMatrixInversion() throws Exception {
+/* test na macierzy jednostkowej
+* wynikowa macierz to macierz jednostkowa o tych samych wymiarach */
+        Matrix wynik = jednostkowa.inversion();
+        for (int i = 0; i < jednostkowa.getRows(); i++)
+            for (int j = 0; j < jednostkowa.getCols(); j++)
+                Assert.assertEquals(jednostkowa.get(i,j), wynik.get(i,j), delta);
     }
 
     @Test
@@ -114,8 +137,10 @@ public class MatrixTest {
                                 1.0 , 4.0 , 7.0 ,
                                 2.0 , 5.0 , 8.0  };
 
+        m.transposition();
+
         for(int i = 0 ; i < m.getCols() ; i++)
             for(int j = 0 ; j < m.getRows() ; j++)
-                Assert.assertEquals(expected[i*3 + j] , m.get(j , i) , delta);
+                Assert.assertEquals(expected[i*3 + j] , m.get(i , j) , delta);
     }
 }

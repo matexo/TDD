@@ -1,6 +1,8 @@
 package com.matrix;
 
 
+import java.util.Arrays;
+
 /**
  * Created by Matexo on 2015-12-09.
  */
@@ -42,11 +44,38 @@ public class Matrix implements MatrixOperations {
     }
 
     public Matrix multiply(Matrix m) {
-        return null;
-    }
+            if (cols != m.getRows()) {
+                throw new RuntimeException("Niewłaściwe wymiary macierzy");
+            }
+            Matrix C = new Matrix(rows, m.getCols());
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < m.getCols(); j++) {
+                    for (int k = 0; k < cols; k++) {
+                        C.data[i][j] += data[i][k] * m.data[k][j];
+                    }
+                }
+            }
+            return C;
+        }
+
 
     public Matrix inversion() {
-        return null;
+        int n = rows;
+        Matrix inverted = new Matrix(n,n);
+        for (int k = 0; k < n; k++) {
+            for (int i = 0; i < n; i++)
+                if (i != k)
+                    inverted.set(i, k, (get(i, k) / get(k, k)));
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    if (i != k && j != k)
+                        inverted.set(i,j,(get(i,j) - get(i,k) * get(k,j)));
+            for (int j = 0; j < n; j++)
+                if (j != k)
+                    inverted.set(k,j,(-get(k,j)/get(k,k)));
+            inverted.set(k,k,(1/get(k,k)));
+        }
+        return inverted;
     }
 
     public void transposition() {
@@ -55,6 +84,7 @@ public class Matrix implements MatrixOperations {
             {
             swap(i,j);
             }
+
     }
 
     private void isSquare(int rows , int cols) throws ArithmeticException
@@ -77,5 +107,27 @@ public class Matrix implements MatrixOperations {
         double temp = this.data[row][col];
         this.data[row][col] = this.data[col][row];
         this.data[col][row] = temp;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Matrix other = (Matrix) obj;
+        if (!Arrays.deepEquals(this.data, other.data)) {
+            return false;
+        }
+        if (this.rows != other.rows) {
+            return false;
+        }
+        if (this.cols != other.cols) {
+            return false;
+        }
+
+        return true;
     }
 }
