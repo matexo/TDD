@@ -42,7 +42,8 @@ public class Matrix implements MatrixOperations {
     }
 
     public Matrix subtract(Matrix m) {
-        return null;
+        if(this.cols != m.getCols() || this.rows != m.getRows()) throw new ArithmeticException();
+        return m;
     }
 
     public Matrix multiply(Matrix m) {
