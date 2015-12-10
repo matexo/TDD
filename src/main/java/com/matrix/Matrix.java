@@ -54,15 +54,6 @@ public class Matrix implements MatrixOperations {
         return null;
     }
 
-    @Override
-    public String toString() {
-        return "Matrix{" +
-                "data=" + Arrays.toString(data) +
-                ", rows=" + rows +
-                ", cols=" + cols +
-                '}';
-    }
-
     private void isSquare(int rows , int cols) throws ArithmeticException
     {
         if(this.cols != cols || this.rows != rows) throw new ArithmeticException();

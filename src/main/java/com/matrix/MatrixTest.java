@@ -91,10 +91,6 @@ public class MatrixTest {
 
     }
 
-    @Test
-    public void testSubtract() throws Exception {
-
-    }
 
     @Test
     public void testMultiply() throws Exception {
@@ -109,5 +105,19 @@ public class MatrixTest {
     @Test
     public void testTransposition() throws Exception {
 
+        Matrix m = new Matrix(3,3);
+        for(int i = 0 ; i < 3 ; i++)
+            for(int j = 0 ; j < 3 ; j++)
+                m.set(i , j , i*3 + j);
+
+        double expected[] = {   0.0 , 3.0 , 6.0 ,
+                                1.0 , 4.0 , 7.0 ,
+                                2.0 , 5.0 , 8.0  };
+
+        Matrix result = m.transposition();
+
+        for(int i = 0 ; i < m.getCols() ; i++)
+            for(int j = 0 ; j < m.getRows() ; j++)
+                Assert.assertEquals(expected[i*3 + j] , result.get(i , j) , delta);
     }
 }
