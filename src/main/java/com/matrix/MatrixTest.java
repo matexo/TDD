@@ -77,6 +77,19 @@ public class MatrixTest {
         Matrix c = a.subtract(b);
     }
 
+    @Test
+    public void subtract2Matrix()
+    {
+        Matrix c = jednostkowa.subtract(jednostkowa);
+        double expected[] = {  0.0 , 0.0 , 0.0 ,
+                                0.0 , 0.0 , 0.0 ,
+                                0.0 , 0.0 , 0.0  };
+
+        for(int i = 0 ; i < jednostkowa.getCols() ; i++)
+            for(int j = 0 ; j < jednostkowa.getRows() ; j++)
+                Assert.assertEquals(expected[i*3 + j] , c.get(i , j) , delta);
+
+    }
 
     @Test
     public void testSubtract() throws Exception {
