@@ -1,6 +1,5 @@
 package com.matrix;
 
-<<<<<<< HEAD
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,10 +7,6 @@ import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 import java.util.Collection;
-=======
-import org.junit.Before;
-import org.junit.Test;
->>>>>>> origin/master
 
 import static org.junit.Assert.*;
 
@@ -29,7 +24,6 @@ public class MatrixTest {
     public void setUp() throws Exception {
         /* delta do porównywania
         * przykładowa, jeśli ktoś chce to niech ją zmieni */
-<<<<<<< HEAD
         delta = Double.MIN_VALUE * Math.pow(10, 3);
         jednostkowa = new Matrix(3, 3);
         zerowa = new Matrix(3, 3);
@@ -98,41 +92,6 @@ public class MatrixTest {
     }
 
 
-=======
-        delta = Double.MIN_VALUE * Math.pow(10,3);
-        jednostkowa = new Matrix(3,3);
-        zerowa = new Matrix(3,3);
-        zwyklaKwadratowa = new Matrix(3,3);
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++) {
-                if (i == j)
-                    jednostkowa.set(i,j,1);
-                else
-                    jednostkowa.set(i,j,0);
-                zerowa.set(i,j,0);
-            }
-        zwyklaKwadratowa.set(0,0,6);
-        zwyklaKwadratowa.set(0,1,3);
-        zwyklaKwadratowa.set(0,2,6);
-        zwyklaKwadratowa.set(1,0,2);
-        zwyklaKwadratowa.set(1,1,3);
-        zwyklaKwadratowa.set(1,2,5);
-        zwyklaKwadratowa.set(2,0,-1);
-        zwyklaKwadratowa.set(2,1,2);
-        zwyklaKwadratowa.set(2,2,4);
-    }
-
-    @Test
-    public void testAdd() throws Exception {
-
-    }
-
-    @Test
-    public void testSubtract() throws Exception {
-
-    }
-
->>>>>>> origin/master
     @Test
     public void testMultiply() throws Exception {
 
@@ -146,7 +105,6 @@ public class MatrixTest {
     @Test
     public void testTransposition() throws Exception {
 
-<<<<<<< HEAD
         Matrix m = new Matrix(3,3);
         for(int i = 0 ; i < 3 ; i++)
             for(int j = 0 ; j < 3 ; j++)
@@ -156,12 +114,8 @@ public class MatrixTest {
                                 1.0 , 4.0 , 7.0 ,
                                 2.0 , 5.0 , 8.0  };
 
-        Matrix result = m.transposition();
-
         for(int i = 0 ; i < m.getCols() ; i++)
             for(int j = 0 ; j < m.getRows() ; j++)
-                Assert.assertEquals(expected[i*3 + j] , result.get(i , j) , delta);
-=======
->>>>>>> origin/master
+                Assert.assertEquals(expected[i*3 + j] , m.get(j , i) , delta);
     }
 }

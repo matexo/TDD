@@ -11,6 +11,6 @@ public interface MatrixOperations {
     Matrix subtract(Matrix m);
     Matrix multiply(Matrix m);
     Matrix inversion();
-    Matrix transposition();
+    void transposition();
 
 }

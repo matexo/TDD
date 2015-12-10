@@ -1,6 +1,5 @@
 package com.matrix;
 
-import java.util.Arrays;
 
 /**
  * Created by Matexo on 2015-12-09.
@@ -9,7 +8,6 @@ public class Matrix implements MatrixOperations {
     private double[][] data;
     private int rows;
     private int cols;
-<<<<<<< HEAD
 
     public Matrix(int rows, int cols) {
         this.rows = rows;
@@ -29,27 +27,6 @@ public class Matrix implements MatrixOperations {
         return rows;
     }
 
-=======
-
-    public Matrix(int rows, int cols) {
-        this.rows = rows;
-        this.cols = cols;
-        data = new double[rows][cols];
-    }
-
-    public double get(int i, int j) {
-        return data[i][j];
-    }
-
-    public void set(int i, int j, double val) {
-        data[i][j] = val;
-    }
-
-    public int getRows() {
-        return rows;
-    }
-
->>>>>>> origin/master
     public int getCols() {
         return cols;
     }
@@ -72,8 +49,12 @@ public class Matrix implements MatrixOperations {
         return null;
     }
 
-    public Matrix transposition() {
-        return null;
+    public void transposition() {
+    for(int i = 1 ; i < this.cols ; i++)
+        for( int j = i ; j < this.rows ; j++)
+            {
+            swap(i,j);
+            }
     }
 
     private void isSquare(int rows , int cols) throws ArithmeticException
@@ -91,4 +72,10 @@ public class Matrix implements MatrixOperations {
         return result;
     }
 
+    private void swap( int row  , int col )
+    {
+        double temp = this.data[row][col];
+        this.data[row][col] = this.data[col][row];
+        this.data[col][row] = temp;
+    }
 }
