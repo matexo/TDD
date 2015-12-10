@@ -1,5 +1,7 @@
 package com.matrix;
 
+import java.util.Arrays;
+
 /**
  * Created by Matexo on 2015-12-09.
  */
@@ -32,7 +34,11 @@ public class Matrix implements MatrixOperations {
 
     public Matrix add(Matrix m) {
         if(this.cols != m.getCols() || this.rows != m.getRows()) throw new ArithmeticException();
-        return null;
+        Matrix result = new Matrix(this.rows , this.cols );
+        for(int i = 0 ; i < this.getCols() ; i++)
+            for(int j = 0 ; j < this.getRows() ; j++)
+                result.set(i , j , this.data[i][j] + m.get(i , j));
+        return result;
     }
 
     public Matrix subtract(Matrix m) {
@@ -49,5 +55,14 @@ public class Matrix implements MatrixOperations {
 
     public Matrix transposition() {
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Matrix{" +
+                "data=" + Arrays.toString(data) +
+                ", rows=" + rows +
+                ", cols=" + cols +
+                '}';
     }
 }

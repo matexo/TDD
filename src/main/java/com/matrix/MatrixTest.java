@@ -59,22 +59,17 @@ public class MatrixTest {
     public void adding2Matrix()
     {
         Matrix c = jednostkowa.add(jednostkowa);
-        double expected[] = {  1.0 , 0.0 , 0,0 ,
-                            0.0 , 1.0 , 0.0 ,
-                            0.0 , 0.0 , 1.0 };
+        double expected[] = {  2.0 , 0.0 , 0.0 ,
+                               0.0 , 2.0 , 0.0 ,
+                               0.0 , 0.0 , 2.0  };
 
-        for(int i = 0 ; i< jednostkowa.getCols() ; i++)
-            for(int j=0 ; j<jednostkowa.getRows() ; j++)
+        for(int i = 0 ; i < jednostkowa.getCols() ; i++)
+            for(int j = 0 ; j < jednostkowa.getRows() ; j++)
                 Assert.assertEquals(expected[i*3 + j] , c.get(i , j) , delta);
 
-
     }
 
-
-    @Test
-    public void testAdd() throws Exception {
-
-    }
+    @Test(expected = ArithmeticException.class)
 
 
 
