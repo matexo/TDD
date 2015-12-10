@@ -34,20 +34,12 @@ public class Matrix implements MatrixOperations {
 
     public Matrix add(Matrix m) {
         isSquare(m.getRows() , m.getCols());
-        Matrix result = new Matrix(this.rows , this.cols );
-        for(int i = 0 ; i < this.getCols() ; i++)
-            for(int j = 0 ; j < this.getRows() ; j++)
-                result.set(i , j , this.data[i][j] + m.get(i , j));
-        return result;
+        return operation(m , true);
     }
 
     public Matrix subtract(Matrix m) {
         isSquare(m.getRows() , m.getCols());
-        Matrix result = new Matrix(this.rows , this.cols );
-        for(int i = 0 ; i < this.getCols() ; i++)
-            for(int j = 0 ; j < this.getRows() ; j++)
-                result.set(i , j , this.data[i][j] - m.get(i , j));
-        return result;
+        return operation(m , false);
     }
 
     public Matrix multiply(Matrix m) {
@@ -75,4 +67,15 @@ public class Matrix implements MatrixOperations {
     {
         if(this.cols != cols || this.rows != rows) throw new ArithmeticException();
     }
+
+    private Matrix operation(Matrix m , boolean isAdding)
+    {
+        Matrix result = new Matrix(this.rows , this.cols );
+        for(int i = 0 ; i < this.getCols() ; i++)
+            for(int j = 0 ; j < this.getRows() ; j++)
+                if(isAdding == true) result.set(i , j , this.data[i][j] + m.get(i , j));
+                else result.set(i , j , this.data[i][j] - m.get(i , j));
+        return result;
+    }
+
 }
