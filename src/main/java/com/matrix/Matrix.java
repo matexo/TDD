@@ -43,7 +43,11 @@ public class Matrix implements MatrixOperations {
 
     public Matrix subtract(Matrix m) {
         isSquare(m.getRows() , m.getCols());
-        return m;
+        Matrix result = new Matrix(this.rows , this.cols );
+        for(int i = 0 ; i < this.getCols() ; i++)
+            for(int j = 0 ; j < this.getRows() ; j++)
+                result.set(i , j , this.data[i][j] - m.get(i , j));
+        return result;
     }
 
     public Matrix multiply(Matrix m) {
