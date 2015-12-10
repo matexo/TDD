@@ -33,7 +33,7 @@ public class Matrix implements MatrixOperations {
     }
 
     public Matrix add(Matrix m) {
-        if(this.cols != m.getCols() || this.rows != m.getRows()) throw new ArithmeticException();
+        isSquare(m.getRows() , m.getCols());
         Matrix result = new Matrix(this.rows , this.cols );
         for(int i = 0 ; i < this.getCols() ; i++)
             for(int j = 0 ; j < this.getRows() ; j++)
@@ -42,7 +42,7 @@ public class Matrix implements MatrixOperations {
     }
 
     public Matrix subtract(Matrix m) {
-        if(this.cols != m.getCols() || this.rows != m.getRows()) throw new ArithmeticException();
+        isSquare(m.getRows() , m.getCols());
         return m;
     }
 
@@ -65,5 +65,10 @@ public class Matrix implements MatrixOperations {
                 ", rows=" + rows +
                 ", cols=" + cols +
                 '}';
+    }
+
+    private void isSquare(int rows , int cols) throws ArithmeticException
+    {
+        if(this.cols != cols || this.rows != rows) throw new ArithmeticException();
     }
 }
