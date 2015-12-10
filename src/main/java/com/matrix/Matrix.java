@@ -9,6 +9,7 @@ public class Matrix implements MatrixOperations {
     private double[][] data;
     private int rows;
     private int cols;
+<<<<<<< HEAD
 
     public Matrix(int rows, int cols) {
         this.rows = rows;
@@ -28,6 +29,27 @@ public class Matrix implements MatrixOperations {
         return rows;
     }
 
+=======
+
+    public Matrix(int rows, int cols) {
+        this.rows = rows;
+        this.cols = cols;
+        data = new double[rows][cols];
+    }
+
+    public double get(int i, int j) {
+        return data[i][j];
+    }
+
+    public void set(int i, int j, double val) {
+        data[i][j] = val;
+    }
+
+    public int getRows() {
+        return rows;
+    }
+
+>>>>>>> origin/master
     public int getCols() {
         return cols;
     }
