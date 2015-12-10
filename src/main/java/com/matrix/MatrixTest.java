@@ -48,7 +48,7 @@ public class MatrixTest {
     }
 
     @Test(expected = ArithmeticException.class)
-    public void isMatrixSquare()
+    public void isMatrixSquareAdd()
     {
         Matrix a = new Matrix(1 , 2);
         Matrix b = new Matrix(2 , 1);
@@ -70,7 +70,12 @@ public class MatrixTest {
     }
 
     @Test(expected = ArithmeticException.class)
-
+    public void isMatrixSquareSub()
+    {
+        Matrix a = new Matrix(1 , 2);
+        Matrix b = new Matrix(2 , 1);
+        Matrix c = a.subtract(b);
+    }
 
 
     @Test
