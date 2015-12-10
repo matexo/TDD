@@ -42,8 +42,7 @@ public class MatrixTest {
         zwyklaKwadratowa.set(2, 2, 4);
     }
 
-    @Test
-    @Exception(Exception = ArithmeticException.class)
+    @Test(expected = ArithmeticException.class)
     public void isMatrixSquare()
     {
         Matrix a = new Matrix(1 , 2);

@@ -31,6 +31,7 @@ public class Matrix implements MatrixOperations {
     }
 
     public Matrix add(Matrix m) {
+        if(this.cols != m.getCols() || this.rows != m.getRows()) throw new ArithmeticException();
         return null;
     }
 
