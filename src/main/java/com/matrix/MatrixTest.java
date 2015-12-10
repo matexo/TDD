@@ -1,7 +1,12 @@
 package com.matrix;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runners.Parameterized;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 import static org.junit.Assert.*;
 
@@ -47,10 +52,23 @@ public class MatrixTest {
     {
         Matrix a = new Matrix(1 , 2);
         Matrix b = new Matrix(2 , 1);
-        a.add(b);
+        Matrix c = a.add(b);
     }
 
+    @Test
+    public void adding2Matrix()
+    {
+        Matrix c = jednostkowa.add(jednostkowa);
+        double expected[] = {  1.0 , 0.0 , 0,0 ,
+                            0.0 , 1.0 , 0.0 ,
+                            0.0 , 0.0 , 1.0 };
 
+        for(int i = 0 ; i< jednostkowa.getCols() ; i++)
+            for(int j=0 ; j<jednostkowa.getRows() ; j++)
+                Assert.assertEquals(expected[i*3 + j] , c.get(i , j) , delta);
+
+
+    }
 
 
     @Test
