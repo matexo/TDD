@@ -4,40 +4,48 @@ package com.matrix;
  * Created by Matexo on 2015-12-09.
  */
 public class Matrix implements MatrixOperations {
+    private double[][] data;
+    private int rows;
+    private int cols;
 
-    private double[][] matrix;
-
-    public Matrix(int x , int y)
-    {
-        matrix = new double [x][y];
+    public Matrix(int rows, int cols) {
+        this.rows = rows;
+        this.cols = cols;
+        data = new double[rows][cols];
     }
 
-    public double getValue(int x , int y)
-    {
-        return matrix[x][y];
+    public double get(int i, int j) {
+        return data[i][j];
     }
 
-    @Override
+    public void set(int i, int j, double val) {
+        data[i][j] = val;
+    }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public int getCols() {
+        return cols;
+    }
+
     public Matrix add(Matrix m) {
         return null;
     }
 
-    @Override
     public Matrix subtract(Matrix m) {
         return null;
     }
 
-    @Override
     public Matrix multiply(Matrix m) {
         return null;
     }
 
-    @Override
     public Matrix inversion() {
         return null;
     }
 
-    @Override
     public Matrix transposition() {
         return null;
     }
