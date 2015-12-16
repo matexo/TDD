@@ -60,6 +60,7 @@ public class Matrix implements MatrixOperations {
 
 
     public Matrix inversion() {
+        if (rows != cols) throw new ArithmeticException("Macierz nie jest kwadratowa");
         int n = rows;
         Matrix inverted = new Matrix(n,n);
         for (int k = 0; k < n; k++) {
