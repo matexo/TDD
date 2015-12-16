@@ -3,12 +3,9 @@ package com.matrix;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runners.Parameterized;
 
-import java.util.Arrays;
-import java.util.Collection;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * MatrixTDD
@@ -117,12 +114,20 @@ public class MatrixTest {
 
     @Test
     public void testUnitMatrixInversion() throws Exception {
-/* test na macierzy jednostkowej
-* wynikowa macierz to macierz jednostkowa o tych samych wymiarach */
+        /* test na macierzy jednostkowej
+        * wynikowa macierz to macierz jednostkowa o tych samych wymiarach */
         Matrix wynik = jednostkowa.inversion();
         for (int i = 0; i < jednostkowa.getRows(); i++)
             for (int j = 0; j < jednostkowa.getCols(); j++)
                 Assert.assertEquals(jednostkowa.get(i,j), wynik.get(i,j), delta);
+    }
+
+    @Test(expected = ArithmeticException.class)
+    public void testNonSquereInversion() {
+        Matrix nonSquare = new Matrix(2,1);
+        nonSquare.set(0,0,-2);
+        nonSquare.set(1,0,2);
+        Matrix result = nonSquare.inversion();
     }
 
     @Test
